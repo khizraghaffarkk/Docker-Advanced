@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  toyota-data-feeder:
+    image: docker-registry.rahti.csc.fi/test11/toyota-data-feeder-app:1.0
+    hostname: toyota-data-feeder
+    networks:
+      - khghaffa23-net
+    environment:
+      - MQTT_URL=mosquitto
+      - MQTT_PORT=8883  
+      - CLIENT_ID=khghaffa
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    hostname: mosquitto
+    networks:
+      - khghaffa23-net
+    ports:
+      - "1883:1883"
+      - "8883:8883"
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./ca.crt:/mosquitto/certs/ca.crt
+      - ./server.crt:/mosquitto/certs/server.crt
+      - ./server.key:/mosquitto/certs/server.key
+
+networks:
+  khghaffa23-net:
+    name: khghaffa23-net
+    driver: bridge
