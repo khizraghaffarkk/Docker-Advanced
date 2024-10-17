@@ -61,10 +61,11 @@ The `mosquitto.conf` file is mounted into the Mosquitto container, defining the 
    git clone https://github.com/khizraghaffarkk/toyota-data-feeder.git
    cd toyota-data-feeder
 2. Build and start the services using Docker Compose:
+   bash
    docker-compose up --build
 
-3. The Mosquitto broker will be available on the following ports:
+4. The Mosquitto broker will be available on the following ports:
 
-- `Port 1883: Plain MQTT
-- `Port 8883: Secure MQTT with TLS/SSL
+- Port 1883: Plain MQTT
+- Port 8883: Secure MQTT with TLS/SSL
 4. The feeder.py script will start sending vehicle data to the Mosquitto broker over the secure MQTT connection.
