@@ -12,7 +12,6 @@ This project is a simple Dockerized data feeder application that sends data to a
   - [Mosquitto Configuration](#mosquitto-configuration)
 - [Project Files](#project-files)
 - [How to Run](#how-to-run)
-- [License](#license)
 
 ## Project Overview
 
@@ -65,7 +64,6 @@ The `mosquitto.conf` file is mounted into the Mosquitto container, defining the 
    docker-compose up --build
 
 4. The Mosquitto broker will be available on the following ports:
-
-- Port 1883: Plain MQTT
-- Port 8883: Secure MQTT with TLS/SSL
+  - Port 1883: Plain MQTT
+  - Port 8883: Secure MQTT with TLS/SSL
 4. The feeder.py script will start sending vehicle data to the Mosquitto broker over the secure MQTT connection.
