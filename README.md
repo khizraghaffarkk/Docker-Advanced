@@ -70,14 +70,19 @@ The `mosquitto.conf` file is mounted into the Mosquitto container, defining the 
 5. To stop and remove all running services, you can use the following command:
    ```bash
    docker-compose down
+## How to Add More Services for Customization
 
-To add more services for customization, edit your docker-compose.yml file and define the new service(s) under the services section. Here’s an example of how to add a new service:
+To add more services for customization in your Docker Compose setup, follow these steps:
 
-yaml
-services:
-  new-service:
-    image: your-image-name
-    ports:
-      - "8080:80"
-    networks:
-      - your-network
+1. **Open your `docker-compose.yml` file** in your preferred text editor.
+
+2. **Define the new service(s)** under the `services` section. Here’s an example of how to add a new service:
+
+   ```yaml
+   services:
+     new-service:
+       image: your-image-name
+       ports:
+         - "8080:80"
+       networks:
+         - your-network
